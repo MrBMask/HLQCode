@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PS3-0X-w75">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zyk-5s-tLY">
+                                <rect key="frame" x="164" y="268.5" width="46" height="30"/>
+                                <state key="normal" title="扫一扫"/>
+                                <connections>
+                                    <segue destination="az9-ya-poY" kind="push" id="GBt-D3-ol3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EHd-ck-P8Z">
+                                <rect key="frame" x="149" y="368.5" width="77" height="30"/>
+                                <state key="normal" title="生成二维码"/>
+                                <connections>
+                                    <segue destination="Zjx-vT-pSt" kind="push" id="28G-RM-D4q"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="EHd-ck-P8Z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5kc-88-foo"/>
+                            <constraint firstItem="EHd-ck-P8Z" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="50" id="A7q-q3-WoN"/>
+                            <constraint firstItem="zyk-5s-tLY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-50" id="m2q-h4-zJz"/>
+                            <constraint firstItem="zyk-5s-tLY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="va7-fd-QHJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="2To-Sy-gcR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="922" y="-564"/>
+        </scene>
+        <!--我的二维码-->
+        <scene sceneID="10z-Mb-7gh">
+            <objects>
+                <viewController id="Zjx-vT-pSt" customClass="CreatQCodeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1fe-bH-Cnp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XoJ-7i-bbV">
+                                <rect key="frame" x="87" y="233" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="0GH-h3-tyx"/>
+                                    <constraint firstAttribute="width" secondItem="XoJ-7i-bbV" secondAttribute="height" multiplier="1:1" id="bPr-nd-69J"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XoJ-7i-bbV" firstAttribute="centerX" secondItem="1fe-bH-Cnp" secondAttribute="centerX" id="679-Bg-hO2"/>
+                            <constraint firstItem="XoJ-7i-bbV" firstAttribute="centerY" secondItem="1fe-bH-Cnp" secondAttribute="centerY" id="xY4-La-OkI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uM5-06-6t1"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="我的二维码" id="HGo-ea-UhW"/>
+                    <connections>
+                        <outlet property="codeImage" destination="XoJ-7i-bbV" id="eeR-gA-yIB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Ks-tB-3AB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1713" y="-137"/>
+        </scene>
+        <!--扫一扫-->
+        <scene sceneID="FA5-HO-RJE">
+            <objects>
+                <viewController id="az9-ya-poY" customClass="ScanViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UgA-kd-Wh3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="s5A-bZ-9EW"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="扫一扫" id="7pn-Rs-TaQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wWV-o6-4pP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1722" y="-1045"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZOR-WM-DG7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PS3-0X-w75" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7K7-1G-qnm">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Rxw-s7-x3G"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Lu-GD-zQx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="205.59999999999999" y="-564.46776611694156"/>
+        </scene>
+    </scenes>
+</document>
